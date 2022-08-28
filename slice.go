@@ -31,25 +31,51 @@ import "fmt"
 // 	fmt.Println(slice)
 // }
 
-func changearray(array2 [5]int) {
-	array2[2]= 200
+// func changearray(array2 [5]int) {
+// 	array2[2]= 200
 
-}
+// }
 
-func changeslice(slice2 []int){
-	slice2[2]= 200
-}
+// func changeslice(slice2 []int){
+// 	slice2[2]= 200
+// }
+
+// func main(){
+// 	array := [5]int{1,2,3,4}
+// 	slice := []int{1,2,3,4}
+
+// 	changearray(array)
+
+// 	changeslice(slice)
+
+// 	fmt.Println("array:", array)
+// 	fmt.Println("slice:", slice)
+// }
+
+// func main(){
+// 	slice1 := []int{1,2,3,4,5}
+
+// 	slice2 := make([]int, len(slice1))
+
+// 	for i, v := range slice1 {
+// 		slice2[i] = v
+// 	}
+
+// 	slice1[1] = 100
+// 	fmt.Println(slice1)
+// 	fmt.Println(slice2)
+// }
+
 
 func main(){
-	array := [5]int{1,2,3,4}
-	slice := []int{1,2,3,4}
+	slice := []int{1,2,3,4,5,6}
+	idx := 2;
 
-	changearray(array)
+	slice = append(slice[:idx],append([]int{100}, slice[idx:]...)...)
 
-	changeslice(slice)
+	slice[idx] = 100
 
-	fmt.Println("array:", array)
-	fmt.Println("slice:", slice)
+	fmt.Println(slice)
 }
 
 
