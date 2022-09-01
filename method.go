@@ -1,7 +1,6 @@
 package main
 
-import "fmt"
-	   "time"
+import "time"
 
 // type account struct{
 // 	balance int
