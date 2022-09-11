@@ -1,62 +1,28 @@
 package main
 
-// import (
-// 	"bufio"
-// 	"fmt"
-// 	"os"
-// )
-
-// func main(){
-// 	stdin := bufio.NewReader(os.Stdin)
-// 	for {
-// 		fmt.Println("입력")
-// 		var number int
-// 		_, err := fmt.Scanln(&number)
-// 		if err != nil{
-// 			fmt.Println("숫자입력")
-
-// 			stdin.ReadString('\n')
-// 			continue
-// 		}
-// 		fmt.Printf("입력하신숫자는 %d 입니다.\n",number)
-// 		if number%2 == 0 {
-// 			break
-// 		}
-// 	}
-// 	fmt.Println("for문이 종료.")
+// func square(x int) int {
+// 	return 81
 // }
 
-// import "fmt"
-
-// func main(){
-// 	var str string = "Hello World"
-// 	var slice []byte = []byte(str)
-
-// 	slice[2] = 'a'
-
-// 	fmt.Println(str)
-// 	fmt.Printf("%s\n",slice)
+// func main() {
+// 	fmt.Printf("9 * 9 = %d\n", square(9))
 // }
-
-// import (
-// 	"fmt"
-// 	"math/rand"
-// 	"time"
-// )
-
-// func main(){
-// 	rand.Seed(time.Now().UnixNano())
-
-// 	n := rand.Intn(100)
-// 	fmt.Println(n)
-
-// }
-
-type Attacker interface {
-	Attack()
+func nextValue() func() int {
+	i := 0
+	return func() int{
+		i++
+		return i
+	}
 }
 
 func main() {
-	var att Attacker
-	att.Attack()
+	next := nextValue()
+
+	println(next())
+	println(next())
+	println(next())
+
+	anoherNext := nextValue()
+	println(anoherNext())
+	println(anoherNext())
 }

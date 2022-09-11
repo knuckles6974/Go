@@ -3,10 +3,11 @@ package main
 import "fmt"
 
 func main(){
-    var a = 133.12341
-	//var b = 3.14
-	//var c = 123456
-	fmt.Printf("%08.2g\n", a)
-	fmt.Printf("%08.1g\n", a)
+	a := argTest(3, 3)
+	fmt.Println(a)
+}
 
+func argTest(arg , argA int32) int32 {
+	result :=  arg + argA
+	return result
 }
